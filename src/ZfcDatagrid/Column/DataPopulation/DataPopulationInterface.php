@@ -8,7 +8,7 @@ interface DataPopulationInterface
      *
      * @return string
      */
-    public function toString(): string;
+    public function toString(): string | array;
 
     /**
      * Directy set a parameter for the object.

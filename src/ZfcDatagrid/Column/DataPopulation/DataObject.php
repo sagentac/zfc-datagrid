@@ -73,7 +73,7 @@ class DataObject implements DataPopulationInterface
     public function setObjectParameter(string $name, $value): DataPopulationInterface
     {
         if ($this->getObject()) {
-            $this->getObject()->setParameterFromColumn($name, $value);   
+            $this->getObject()->setParameterFromColumn($name, $value);
         }
 
         return $this;
@@ -82,7 +82,7 @@ class DataObject implements DataPopulationInterface
     /**
      * @return string
      */
-    public function toString(): string
+    public function toString(): string | array
     {
         $return = '';
         if ($this->getObject()) {
