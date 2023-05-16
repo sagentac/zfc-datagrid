@@ -63,7 +63,7 @@ class PaginatorFast implements AdapterInterface
     public function count(): int
     {
         if ($this->rowCount !== null) {
-            return $this->rowCount || 0;
+            return intval($this->rowCount);
         }
 
         $qbOriginal = $this->getQueryBuilder();
@@ -121,6 +121,6 @@ class PaginatorFast implements AdapterInterface
             $this->rowCount = $qb->getQuery()->getSingleScalarResult();
         }
 
-        return $this->rowCount || 0;
+        return intval($this->rowCount);
     }
 }
